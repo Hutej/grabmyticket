@@ -1,0 +1,8 @@
+<svg width="900" height="560" viewBox="0 0 900 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="12" y="12" width="876" height="536" rx="30" fill="#FFE8CC" stroke="#1B1B1B" stroke-width="8"/>
+  <rect x="96" y="100" width="708" height="360" rx="28" fill="#FFFFFF" stroke="#1B1B1B" stroke-width="6"/>
+  <rect x="130" y="136" width="640" height="196" rx="18" fill="#FFB15A"/>
+  <rect x="130" y="360" width="480" height="38" rx="12" fill="#F0F0F0"/>
+  <rect x="130" y="414" width="260" height="38" rx="12" fill="#F0F0F0"/>
+  <text x="314" y="250" font-family="Arial" font-size="56" font-weight="800" fill="#1B1B1B">EVENT</text>
+</svg>

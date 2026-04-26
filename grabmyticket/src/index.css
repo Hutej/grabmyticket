@@ -1,0 +1,65 @@
+:root {
+  --bg-main: #ebddc9;
+  --surface-main: #f7e8d3;
+  --surface-soft: #f4e0c4;
+  --surface-focus: #fff1dc;
+  --text-main: #17110b;
+  --text-muted: #605144;
+  --accent: #ff8500;
+  --accent-soft: #ffcf9a;
+  --sunbeam: #ffc36d;
+  --accent-ink: #0f0b07;
+  --danger-bg: #ffceb8;
+  --danger-text: #5f1b08;
+  --success-bg: #c5f0b6;
+  --success-text: #13380a;
+
+  --radius: 5px;
+  --stroke: 2px solid var(--text-main);
+  --neo-shadow: -3px 0 0 var(--text-main);
+  --heading-weight: 700;
+  --base-weight: 600;
+}
+
+:root[data-theme='dark'] {
+  --bg-main: #17130f;
+  --surface-main: #2a2118;
+  --surface-soft: #33271c;
+  --surface-focus: #443427;
+  --text-main: #f7efdf;
+  --text-muted: #d9cab3;
+  --accent: #ff8500;
+  --accent-soft: #6d4310;
+  --sunbeam: #7a4f1a;
+  --accent-ink: #1b1107;
+  --danger-bg: #5f2619;
+  --danger-text: #ffd8cb;
+  --success-bg: #2f4d25;
+  --success-text: #d8f0cf;
+
+  --stroke: 2px solid var(--text-main);
+  --neo-shadow: -3px 0 0 #000000;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: var(--base-weight);
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  width: min(1200px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
