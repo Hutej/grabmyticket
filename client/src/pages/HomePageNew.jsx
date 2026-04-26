@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Card, CardContent } from '../components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Badge } from '../components/ui/badge'
+import EventCard from '../components/EventCard'
 import { formatPrice } from '../lib/events'
 
 function HomePage({ events, isLoading }) {
@@ -11,80 +12,25 @@ function HomePage({ events, isLoading }) {
 
   return (
     <div className="space-y-16">
-      {/* Hero Section with Sidebar */}
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        {/* Left: Hero Content */}
-        <div className="lg:col-span-2 space-y-8">
-          <div className="max-w-3xl">
-            <p className="text-xs font-heading uppercase tracking-widest text-main mb-4">Welcome to GrabMyShow</p>
-            <h1 className="text-5xl lg:text-6xl font-black leading-tight mb-6">
-              Discover & Book Premium Events
-            </h1>
-            <p className="text-lg text-foreground/70 leading-relaxed mb-8">
-              Your gateway to concerts, movies, sports, comedy, and conferences. Find, compare, and book your favorite events with confidence.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="text-base py-6">
-                <Link to="/events">Explore All Events</Link>
-              </Button>
-              <Button asChild variant="neutral" className="text-base py-6">
-                <Link to="/about">Learn More</Link>
-              </Button>
-            </div>
+      {/* Hero Section */}
+      <section className="space-y-8">
+        <div className="max-w-3xl">
+          <p className="text-xs font-heading uppercase tracking-widest text-main mb-4">Welcome to GrabMyShow</p>
+          <h1 className="text-5xl lg:text-6xl font-black leading-tight mb-6">
+            Discover & Book Premium Events
+          </h1>
+          <p className="text-lg text-foreground/70 leading-relaxed mb-8">
+            Your gateway to concerts, movies, sports, comedy, and conferences. Find, compare, and book your favorite events with confidence.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button asChild className="text-base py-6">
+              <Link to="/events">Explore All Events</Link>
+            </Button>
+            <Button asChild variant="neutral" className="text-base py-6">
+              <Link to="/about">Learn More</Link>
+            </Button>
           </div>
         </div>
-
-        {/* Right: Featured Info Card */}
-        <Card className="border-2 border-gray-200 rounded-2xl overflow-hidden sticky top-20">
-          <div className="h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
-          <CardContent className="pt-6 space-y-4">
-            <div className="space-y-2">
-              <Badge variant="default" className="w-fit">Quick Start</Badge>
-              <h3 className="font-heading text-lg">Why Book with Us?</h3>
-            </div>
-
-            <div className="space-y-3">
-              {/* Feature 1 */}
-              <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                <div className="flex items-start gap-2">
-                  <span className="inline-block w-2.5 h-2.5 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></span>
-                  <div className="space-y-1">
-                    <p className="font-heading text-sm text-foreground">Instant Booking</p>
-                    <p className="text-xs text-foreground/70">Book in seconds, get confirmation instantly</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Feature 2 */}
-              <div className="p-3 bg-purple-50 border border-purple-200 rounded-lg">
-                <div className="flex items-start gap-2">
-                  <span className="inline-block w-2.5 h-2.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span>
-                  <div className="space-y-1">
-                    <p className="font-heading text-sm text-foreground">Best Prices</p>
-                    <p className="text-xs text-foreground/70">Exclusive deals on all event categories</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Feature 3 */}
-              <div className="p-3 bg-pink-50 border border-pink-200 rounded-lg">
-                <div className="flex items-start gap-2">
-                  <span className="inline-block w-2.5 h-2.5 rounded-full bg-pink-500 mt-1.5 flex-shrink-0"></span>
-                  <div className="space-y-1">
-                    <p className="font-heading text-sm text-foreground">Secure Payment</p>
-                    <p className="text-xs text-foreground/70">Bank-level security for all transactions</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t-2 border-gray-200 pt-4">
-              <p className="text-xs text-foreground/60 text-center">
-                Join thousands of happy customers booking events daily
-              </p>
-            </div>
-          </CardContent>
-        </Card>
       </section>
 
       {/* Key Statistics - Clean Cards */}

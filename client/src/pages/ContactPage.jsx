@@ -33,7 +33,7 @@ function ContactPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Contact Form */}
         <div className="lg:col-span-2">
-          <Card>
+          <Card className="border-2 border-gray-200 rounded-2xl">
             <CardHeader>
               <CardTitle>Send us a message</CardTitle>
             </CardHeader>
@@ -48,6 +48,7 @@ function ContactPage() {
                       name="name"
                       placeholder="Your name"
                       disabled={isSubmitted}
+                      className="border-2 border-gray-200 bg-white"
                     />
                   </div>
 
@@ -60,6 +61,7 @@ function ContactPage() {
                       name="email"
                       placeholder="you@example.com"
                       disabled={isSubmitted}
+                      className="border-2 border-gray-200 bg-white"
                     />
                   </div>
                 </div>
@@ -73,7 +75,7 @@ function ContactPage() {
                     rows={5}
                     placeholder="Tell us how we can help"
                     disabled={isSubmitted}
-                    className="resize-none"
+                    className="resize-none border-2 border-gray-200 bg-white"
                   />
                 </div>
 
@@ -82,8 +84,8 @@ function ContactPage() {
                 </Button>
 
                 {isSubmitted && (
-                  <div className="flex items-center gap-3 p-4 bg-green-500/10 border-2 border-green-500 rounded-base">
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <div className="flex items-center gap-3 p-4 bg-green-50 border-2 border-green-200 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
                     <p className="text-sm text-green-600">
                       Thanks! We will reach out to you shortly.
                     </p>
@@ -95,7 +97,8 @@ function ContactPage() {
         </div>
 
         {/* Support Info Sidebar */}
-        <Card className="h-fit">
+        <Card className="h-fit border-2 border-gray-200 rounded-2xl overflow-hidden">
+          <div className="h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
           <CardHeader>
             <CardTitle>Support Channels</CardTitle>
           </CardHeader>
@@ -119,7 +122,7 @@ function ContactPage() {
               <p className="font-heading">Mon-Sat, 9:00 AM to 9:00 PM</p>
             </div>
 
-            <div className="border-t-2 border-border pt-6">
+            <div className="border-t-2 border-gray-200 pt-6">
               <p className="text-sm text-foreground/70">
                 For urgent booking issues, include your event name and contact number.
               </p>

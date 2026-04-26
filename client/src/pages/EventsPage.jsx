@@ -23,52 +23,42 @@ function EventsPage({ events, isLoading }) {
   return (
     <div className="space-y-12">
       {/* Hero Section */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <p className="text-xs font-heading uppercase tracking-widest text-main">Event Discovery</p>
-            <h1 className="text-3xl md:text-4xl font-black">
-              Browse curated events with visual previews.
-            </h1>
-          </div>
-
-          <p className="text-foreground/70 leading-relaxed">
-            Filter by category, compare options, and open each event for full details.
-          </p>
-
-          {/* Type Filters */}
-          <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter events by type">
-            {typeFilters.map((type) => (
-              <button
-                key={type}
-                type="button"
-                onClick={() => setActiveType(type)}
-                className={`
-                  px-4 py-2 rounded-base border-2 font-heading text-sm transition-all
-                  ${activeType === type
-                    ? 'border-main bg-main text-main-foreground'
-                    : 'border-border bg-secondary-background hover:border-main/50'
-                  }
-                `}
-              >
-                {type}
-              </button>
-            ))}
-          </div>
+      <section className="space-y-8">
+        <div className="space-y-4">
+          <p className="text-xs font-heading uppercase tracking-widest text-main">Browse Events</p>
+          <h1 className="text-5xl lg:text-6xl font-black leading-tight">
+            Discover Curated Events
+          </h1>
         </div>
 
-        <div className="flex items-center justify-center">
-          <img
-            src="/images/events-hero.svg"
-            alt="Event catalog illustration"
-            className="w-full h-auto"
-          />
+        <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl">
+          Filter by your favorite category, compare events, and find exactly what you're looking for. From concerts to conferences, we've got something for everyone.
+        </p>
+
+        {/* Type Filters */}
+        <div className="flex flex-wrap gap-3" role="tablist" aria-label="Filter events by type">
+          {typeFilters.map((type) => (
+            <button
+              key={type}
+              type="button"
+              onClick={() => setActiveType(type)}
+              className={`
+                px-6 py-3 rounded-xl font-heading text-sm font-semibold transition-all duration-200 border-2
+                ${activeType === type
+                  ? 'bg-main text-main-foreground border-main shadow-lg'
+                  : 'bg-white text-foreground hover:bg-gray-50 border-gray-200'
+                }
+              `}
+            >
+              {type}
+            </button>
+          ))}
         </div>
       </section>
 
       {/* Loading State */}
       {isLoading && (
-        <div className="p-4 bg-blue-500/10 border-2 border-blue-500 rounded-base text-blue-600 text-sm">
+        <div className="p-4 bg-blue-50 border-2 border-blue-200 rounded-lg text-blue-700 text-sm text-center">
           Refreshing event catalog...
         </div>
       )}
@@ -77,8 +67,12 @@ function EventsPage({ events, isLoading }) {
       <section>
         {filteredEvents.length === 0 ? (
           <Card>
-            <CardContent className="py-12 text-center">
-              <p className="text-foreground/70">No events match this filter yet.</p>
+            <CardContent className="py-16 text-center">
+              <div className="space-y-4">
+                <p className="text-3xl font-black text-foreground/30">∅</p>
+                <p className="text-foreground/70 font-heading">No events available in this category</p>
+                <p className="text-sm text-foreground/60">Try selecting a different category or check back soon</p>
+              </div>
             </CardContent>
           </Card>
         ) : (
@@ -91,14 +85,25 @@ function EventsPage({ events, isLoading }) {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-main text-main-foreground rounded-base border-2 border-border p-8 text-center space-y-4">
-        <h3 className="text-2xl font-black">Ready to lock your seats?</h3>
-        <p className="text-main-foreground/80">
-          Open the Booking route from the navbar to begin your checkout flow.
-        </p>
-        <Button asChild variant="noShadow" className="mx-auto">
-          <Link to="/book">Open Booking Page</Link>
-        </Button>
+      <section>
+        <Card className="border-2 border-gray-200 rounded-2xl overflow-hidden">
+          <div className="h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+          <CardContent className="pt-8">
+            <div className="space-y-6 text-center">
+              <div className="space-y-2">
+                <h3 className="text-3xl font-black">Ready to Book?</h3>
+                <p className="text-foreground/70 max-w-lg mx-auto">
+                  Secure your tickets now and get ready for an unforgettable experience. Our booking process is fast, simple, and secure.
+                </p>
+              </div>
+              <Button asChild className="mx-auto text-base py-6">
+                <Link to="/book">
+                  Open Booking Page
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </section>
     </div>
   )

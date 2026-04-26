@@ -32,7 +32,7 @@ function EventDetailsPage({ events }) {
   return (
     <div className="space-y-12">
       {/* Event Hero */}
-      <Card>
+      <Card className="border-2 border-gray-200 rounded-2xl">
         <CardContent className="pt-8 space-y-6">
           <div className="space-y-2">
             <p className="text-xs font-heading uppercase tracking-widest text-main">{event.type}</p>
@@ -41,28 +41,28 @@ function EventDetailsPage({ events }) {
           </div>
 
           {/* Event Details Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t-2 border-border pt-6">
-            <div className="space-y-1">
-              <p className="text-xs text-foreground/60">Date</p>
-              <p className="font-heading">{formatEventDate(event.date)}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t-2 border-gray-200 pt-6">
+            <div className="space-y-1 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <p className="text-xs text-foreground/60 font-heading">Date</p>
+              <p className="font-heading text-sm">{formatEventDate(event.date)}</p>
             </div>
-            <div className="space-y-1">
-              <p className="text-xs text-foreground/60">Time</p>
-              <p className="font-heading">{event.time}</p>
+            <div className="space-y-1 p-3 bg-purple-50 border border-purple-200 rounded-lg">
+              <p className="text-xs text-foreground/60 font-heading">Time</p>
+              <p className="font-heading text-sm">{event.time}</p>
             </div>
-            <div className="space-y-1">
-              <p className="text-xs text-foreground/60">Venue</p>
-              <p className="font-heading">{event.venue}</p>
+            <div className="space-y-1 p-3 bg-green-50 border border-green-200 rounded-lg">
+              <p className="text-xs text-foreground/60 font-heading">Venue</p>
+              <p className="font-heading text-sm">{event.venue}</p>
             </div>
-            <div className="space-y-1">
-              <p className="text-xs text-foreground/60">City</p>
-              <p className="font-heading">{event.city}</p>
+            <div className="space-y-1 p-3 bg-orange-50 border border-orange-200 rounded-lg">
+              <p className="text-xs text-foreground/60 font-heading">City</p>
+              <p className="font-heading text-sm">{event.city}</p>
             </div>
           </div>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-3 border-t-2 border-border pt-6">
-            <div className="text-2xl font-black text-main">Rs {formatPrice(event.price)} per ticket</div>
+          <div className="flex flex-col sm:flex-row gap-3 border-t-2 border-gray-200 pt-6 items-center">
+            <div className="text-2xl font-black text-main">Rs {formatPrice(event.price)}</div>
             <Button asChild className="flex-1">
               <Link to="/book">Book This Event</Link>
             </Button>

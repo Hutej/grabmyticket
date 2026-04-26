@@ -13,9 +13,9 @@ const navItems = [
 
 function SiteLayout({ theme, onThemeToggle, eventsCount, bookingsCount }) {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="border-b-2 border-border bg-background sticky top-0 z-50">
+      <header className="border-b-2 border-border bg-white/95 backdrop-blur sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4">
           {/* Brand and Navigation Row */}
           <div className="flex items-center justify-between mb-3">
@@ -46,19 +46,11 @@ function SiteLayout({ theme, onThemeToggle, eventsCount, bookingsCount }) {
             </nav>
 
             {/* Header Actions */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <div className="hidden sm:flex items-center gap-2">
                 <Badge variant="neutral" className="text-xs">{eventsCount} events</Badge>
                 <Badge variant="neutral" className="text-xs">{bookingsCount} bookings</Badge>
               </div>
-              <Button 
-                variant="neutral" 
-                size="sm"
-                onClick={onThemeToggle}
-                className="text-xs"
-              >
-                {theme === 'light' ? '🌙' : '☀️'} {theme === 'light' ? 'Dark' : 'Light'}
-              </Button>
             </div>
           </div>
 
@@ -91,13 +83,13 @@ function SiteLayout({ theme, onThemeToggle, eventsCount, bookingsCount }) {
 
       {/* Main Content */}
       <main className="flex-1 w-full">
-        <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="max-w-7xl mx-auto px-6 py-8">
           <Outlet />
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-t-2 border-border bg-background py-8 mt-12">
+      <footer className="border-t-2 border-border bg-white/95 backdrop-blur py-8 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center space-y-2">
           <p className="text-sm text-foreground/70">
             GrabMyShow is your one-stop booking destination for concerts, movies,

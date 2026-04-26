@@ -23,7 +23,8 @@ function AboutPage() {
 
       {/* Mission & Promise */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card>
+        <Card className="border-2 border-gray-200 rounded-2xl overflow-hidden">
+          <div className="h-2 bg-blue-500"></div>
           <CardContent className="pt-8">
             <h3 className="font-heading text-xl mb-4">Our Mission</h3>
             <p className="text-foreground/70 leading-relaxed">
@@ -33,7 +34,8 @@ function AboutPage() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="border-2 border-gray-200 rounded-2xl overflow-hidden">
+          <div className="h-2 bg-purple-500"></div>
           <CardContent className="pt-8">
             <h3 className="font-heading text-xl mb-4">Our Promise</h3>
             <p className="text-foreground/70 leading-relaxed">
@@ -49,9 +51,9 @@ function AboutPage() {
         <h2 className="text-3xl font-black">How It Works</h2>
         <div className="space-y-4">
           {journeySteps.map((step, index) => (
-            <Card key={step}>
+            <Card key={step} className="border-2 border-gray-200 rounded-2xl">
               <CardContent className="pt-6 flex gap-4">
-                <div className="flex items-center justify-center w-10 h-10 rounded-base bg-main text-main-foreground font-heading flex-shrink-0">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-main text-main-foreground font-heading flex-shrink-0">
                   {index + 1}
                 </div>
                 <p className="text-foreground/70 leading-relaxed py-1">{step}</p>

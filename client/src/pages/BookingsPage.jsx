@@ -16,15 +16,15 @@ function BookingsPage({ bookings, isLoading, statusMessage }) {
       </section>
 
       {/* Bookings Table */}
-      <Card>
+      <Card className="border-2 border-gray-200 rounded-2xl">
         <CardContent className="pt-6 space-y-4">
           {isLoading && (
-            <div className="p-4 bg-blue-500/10 border-2 border-blue-500 rounded-base text-blue-600 text-sm">
+            <div className="p-4 bg-blue-50 border-2 border-blue-200 rounded-lg text-blue-700 text-sm">
               Syncing your bookings...
             </div>
           )}
           {statusMessage && (
-            <div className="p-4 bg-green-500/10 border-2 border-green-500 rounded-base text-green-600 text-sm">
+            <div className="p-4 bg-green-50 border-2 border-green-200 rounded-lg text-green-700 text-sm">
               {statusMessage}
             </div>
           )}

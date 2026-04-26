@@ -24,7 +24,7 @@ function BookingForm({
   onSubmit,
 }) {
   return (
-    <Card>
+    <Card className="border-2 border-gray-200 rounded-2xl">
       <CardHeader>
         <CardTitle>Book Your Event</CardTitle>
       </CardHeader>
@@ -44,6 +44,7 @@ function BookingForm({
                   onChange={onFieldChange}
                   placeholder="Your full name"
                   disabled={isLoading}
+                  className="border-2 border-gray-200 bg-white"
                 />
               </div>
 
@@ -57,6 +58,7 @@ function BookingForm({
                   onChange={onFieldChange}
                   placeholder="Your phone number"
                   disabled={isLoading}
+                  className="border-2 border-gray-200 bg-white"
                 />
               </div>
 
@@ -71,6 +73,7 @@ function BookingForm({
                   onChange={onFieldChange}
                   placeholder="you@example.com"
                   disabled={isLoading}
+                  className="border-2 border-gray-200 bg-white"
                 />
               </div>
 
@@ -84,20 +87,21 @@ function BookingForm({
                   onChange={onFieldChange}
                   placeholder="City"
                   disabled={isLoading}
+                  className="border-2 border-gray-200 bg-white"
                 />
               </div>
             </div>
           </div>
 
           {/* Event Selection Section */}
-          <div className="space-y-4 border-t-2 border-border pt-6">
+          <div className="space-y-4 border-t-2 border-gray-200 pt-6">
             <h3 className="font-heading text-sm text-foreground/80">Select Event</h3>
             
             <div className="space-y-3">
               <Label>Event Type</Label>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {typeOptions.map((type) => (
-                  <label key={type} className="flex items-center gap-2 cursor-pointer p-3 border-2 border-border rounded-base hover:bg-secondary-background transition-colors">
+                  <label key={type} className="flex items-center gap-2 cursor-pointer p-3 border-2 border-gray-200 bg-white rounded-lg hover:bg-gray-50 transition-colors">
                     <input
                       type="radio"
                       name="event_type"
@@ -129,7 +133,7 @@ function BookingForm({
                   }}
                   disabled={eventOptions.length === 0 || isLoading}
                 >
-                  <SelectTrigger id="event_name">
+                  <SelectTrigger id="event_name" className="border-2 border-gray-200 bg-white">
                     <SelectValue placeholder={eventOptions.length === 0 ? 'No events available' : 'Choose event'} />
                   </SelectTrigger>
                   <SelectContent>
@@ -154,13 +158,14 @@ function BookingForm({
                   onChange={onFieldChange}
                   placeholder="1"
                   disabled={isLoading}
+                  className="border-2 border-gray-200 bg-white"
                 />
               </div>
             </div>
           </div>
 
           {/* Booking Summary Section */}
-          <div className="bg-secondary-background border-2 border-border rounded-base p-4 space-y-3">
+          <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 space-y-3">
             <h3 className="font-heading text-sm">Booking Summary</h3>
             <div className="flex items-center justify-between text-sm">
               <span className="text-foreground/70">Event Type:</span>
@@ -170,7 +175,7 @@ function BookingForm({
               <span className="text-foreground/70">Tickets:</span>
               <span className="font-heading">{Math.max(1, Number(formData.tickets) || 1)}</span>
             </div>
-            <div className="border-t-2 border-border pt-3 flex items-center justify-between">
+            <div className="border-t-2 border-blue-200 pt-3 flex items-center justify-between">
               <span className="font-heading">Total Cost:</span>
               <span className="font-heading text-lg text-main">Rs {totalCost}</span>
             </div>
@@ -178,22 +183,22 @@ function BookingForm({
 
           {/* Messages */}
           {formError && (
-            <div className="flex items-start gap-3 p-3 bg-red-500/10 border-2 border-red-500 rounded-base">
-              <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-3 bg-red-50 border-2 border-red-200 rounded-lg">
+              <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
               <p className="text-sm text-red-600">{formError}</p>
             </div>
           )}
 
           {statusMessage && (
-            <div className="flex items-start gap-3 p-3 bg-green-500/10 border-2 border-green-500 rounded-base">
-              <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-3 bg-green-50 border-2 border-green-200 rounded-lg">
+              <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
               <p className="text-sm text-green-600">{statusMessage}</p>
             </div>
           )}
 
           {isLoading && (
-            <div className="flex items-start gap-3 p-3 bg-blue-500/10 border-2 border-blue-500 rounded-base">
-              <Info className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-3 bg-blue-50 border-2 border-blue-200 rounded-lg">
+              <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
               <p className="text-sm text-blue-600">Loading latest data...</p>
             </div>
           )}

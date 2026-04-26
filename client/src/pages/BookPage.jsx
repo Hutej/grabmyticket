@@ -50,7 +50,7 @@ function BookPage({
         </div>
 
         {/* Summary Card */}
-        <Card>
+        <Card className="border-2 border-gray-200 rounded-2xl">
           <CardHeader>
             <CardTitle>Live Summary</CardTitle>
           </CardHeader>
@@ -62,7 +62,7 @@ function BookPage({
                   <p className="text-sm text-foreground/70 mt-1">{selectedEvent.description}</p>
                 </div>
 
-                <div className="space-y-2 text-sm border-t-2 border-border pt-4">
+                <div className="space-y-2 text-sm border-t-2 border-gray-200 pt-4">
                   <div className="flex justify-between">
                     <span className="text-foreground/60">When:</span>
                     <span className="font-heading">{formatEventDate(selectedEvent.date)} at {selectedEvent.time}</span>
@@ -77,7 +77,7 @@ function BookPage({
                   </div>
                 </div>
 
-                <div className="border-t-2 border-border pt-4 space-y-2">
+                <div className="border-t-2 border-gray-200 pt-4 space-y-2">
                   <div className="flex justify-between items-center text-lg">
                     <span className="font-heading">Total:</span>
                     <span className="font-heading text-main text-xl">Rs {formatPrice(totalCost)}</span>

@@ -5,7 +5,7 @@ import { Button } from '../components/ui/button'
 function NotFoundPage() {
   return (
     <div className="flex items-center justify-center min-h-[60vh]">
-      <Card className="max-w-lg w-full text-center">
+      <Card className="max-w-lg w-full text-center border-2 border-gray-200 rounded-2xl">
         <CardContent className="pt-12 pb-12 space-y-6">
           <div>
             <p className="text-5xl font-black text-main mb-2">404</p>
